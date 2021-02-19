@@ -1,4 +1,7 @@
 package com.gmail.nmessaoudene.tp2_nael_messaoudene.fragments
 
-class AddNeighbourFragment {
+import androidx.fragment.app.Fragment
+
+class AddNeighbourFragment: Fragment() {
+
 }

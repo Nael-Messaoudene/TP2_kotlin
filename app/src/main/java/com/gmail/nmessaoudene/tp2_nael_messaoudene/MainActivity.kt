@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.databinding.ActivityMainBinding
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.fragments.ListNeighborsFragment
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(),NavigationListener {
 
 
 
@@ -20,10 +20,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-        changeFragment(ListNeighborsFragment())
+        showFragment(ListNeighborsFragment())
     }
 
-    private fun changeFragment(fragment: Fragment) {
+    override fun showFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.fragment_container, fragment)
             addToBackStack(null)
