@@ -73,8 +73,6 @@ class ListNeighborsAdapter(
         alert.show()
     }
 
-
-
     override fun getItemCount(): Int {
         return mNeighbours.size
     }

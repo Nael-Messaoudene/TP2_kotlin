@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">TP2_nael_messaoudene</string>
+    <string name="telephone">Telephone</string>
+    <string name="image">image</string>
+    <string name="nom">Nom</string>
+    <string name="website">Website</string>
+    <string name="adresse">Adresse</string>
+    <string name="a_propos_de_moi">A propos de moi</string>
+    <string name="add_neighbors">Add neighbors</string>
 </resources>
