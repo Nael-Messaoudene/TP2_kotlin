@@ -8,6 +8,9 @@ import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.gmail.nmessaoudene.tp2_nael_messaoudene.R
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.databinding.ActivityMainBinding
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.databinding.ListNeighborsFragmentBinding
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.databinding.NeighborItemBinding
@@ -26,6 +29,16 @@ class ListNeighborsAdapter(
         val neighbour: Neighbor = mNeighbours[position]
         // Display Neighbour Name
         holder.binding.itemListName.text = neighbour.name
+        val context = holder.binding.root.context
+
+        Glide.with(context)
+            .load(neighbour.avatarUrl)
+            .apply(RequestOptions.circleCropTransform())
+            .placeholder(R.drawable.ic_person)
+            .error(R.drawable.ic_person)
+            .skipMemoryCache(false)
+            .into(holder.binding.itemListAvatar)
+
     }
 
     override fun getItemCount(): Int {
