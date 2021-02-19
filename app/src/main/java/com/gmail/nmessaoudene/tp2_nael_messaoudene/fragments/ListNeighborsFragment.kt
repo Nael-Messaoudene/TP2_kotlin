@@ -8,13 +8,15 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.gmail.nmessaoudene.tp2_nael_messaoudene.adapters.ListNeighborHandler
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.adapters.ListNeighborsAdapter
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.data.NeighborRepository
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.databinding.ActivityMainBinding.inflate
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.databinding.ListNeighborsFragmentBinding
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.databinding.ListNeighborsFragmentBinding.inflate
+import com.gmail.nmessaoudene.tp2_nael_messaoudene.models.Neighbor
 
-class ListNeighborsFragment : Fragment(){
+class ListNeighborsFragment : ListNeighborHandler, Fragment(){
 
 
     // lateinit permet d'indiquer au compilateur que la variable sera initialisé plus tard -> Dans le onCreateView
@@ -40,7 +42,11 @@ class ListNeighborsFragment : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val neighbors = NeighborRepository.getInstance().getNeighbours()
-        val adapter = ListNeighborsAdapter(neighbors)
+        val adapter = ListNeighborsAdapter(neighbors,this)
         binding.neighborsList.adapter = adapter
+    }
+
+    override fun onDeleteNeibor(neighbor: Neighbor) {
+        NeighborRepository.getInstance().delete(neighbor)
     }
 }

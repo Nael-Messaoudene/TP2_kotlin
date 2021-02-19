@@ -4,27 +4,24 @@ import com.gmail.nmessaoudene.tp2_nael_messaoudene.models.Neighbor
 
 class InMemoryNeighborDataSource : NeighborDatasource{
 
-    override val neighbors: List<Neighbor>
+    override val neighbors: MutableList<Neighbor>
         get() = InMemory_NeighborS
 
     override fun deleteNeighbor(neighbor: Neighbor) {
-        TODO("Not yet implemented")
+        InMemory_NeighborS.remove(neighbor)
     }
 
     override fun createNeighbor(neighbor: Neighbor) {
-        TODO("Not yet implemented")
     }
 
     override fun updateFavoriteStatus(neighbor: Neighbor) {
-        TODO("Not yet implemented")
     }
 
     override fun updateNeighbor(neighbor: Neighbor) {
-        TODO("Not yet implemented")
     }
 
     // Liste initial des voisins
-    private val InMemory_NeighborS: List<Neighbor> = listOf(
+    private val InMemory_NeighborS: MutableList<Neighbor> = mutableListOf(
         Neighbor(
             1, "Caroline",
             "https://i.picsum.photos/id/1011/5472/3648.jpg?hmac=Koo9845x2akkVzVFX3xxAc9BCkeGYA9VRVfLE4f0Zzk",

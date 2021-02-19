@@ -8,7 +8,7 @@ interface NeighborDatasource {
      * Get all my Neighbors
      * @return [List]
      */
-    val neighbors: List<Neighbor>
+    val neighbors: MutableList<Neighbor>
 
     /**
      * Deletes a neighbor
