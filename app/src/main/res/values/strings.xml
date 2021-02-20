@@ -7,4 +7,12 @@
     <string name="adresse">Adresse</string>
     <string name="a_propos_de_moi">A propos de moi</string>
     <string name="add_neighbors">Add neighbors</string>
+    <string name="enregistrer">enregistrer</string>
+    <string name="save">Enregistrer</string>
+    <string name="hint_about">A propos de moi</string>
+    <string name="hint_address">Adresse</string>
+    <string name="hint_website">Website</string>
+    <string name="hint_phone">Telephone</string>
+    <string name="hint_name">Nom</string>
+    <string name="hint_image">Image</string>
 </resources>

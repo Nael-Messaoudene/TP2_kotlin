@@ -28,6 +28,8 @@ class NeighborRepository {
 
     fun delete(neighbor: Neighbor){
         dataSource.deleteNeighbor(neighbor)
-
     }
+
+    fun createNeighbor(neighbor: Neighbor) = dataSource.createNeighbor(neighbor)
+
 }

@@ -9,10 +9,6 @@ import com.gmail.nmessaoudene.tp2_nael_messaoudene.fragments.ListNeighborsFragme
 
 class MainActivity : AppCompatActivity(),NavigationListener {
 
-
-
-
-
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
