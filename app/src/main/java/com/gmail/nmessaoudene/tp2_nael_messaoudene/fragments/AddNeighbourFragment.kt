@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import androidx.fragment.app.Fragment
+import com.gmail.nmessaoudene.tp2_nael_messaoudene.NavigationListener
+import com.gmail.nmessaoudene.tp2_nael_messaoudene.R
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.databinding.AddNeighborBinding
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.models.Neighbor
 
@@ -20,6 +22,10 @@ class AddNeighbourFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        (activity as? NavigationListener)?.let {
+            it.updateTitle(R.string.addNeighborsTitle)
+        }
 
         val etUserName = binding.name as EditText
         val strUserName = etUserName.text.toString()
@@ -39,12 +45,10 @@ class AddNeighbourFragment: Fragment() {
         val etUserAbout = binding.image as EditText
         val strUserAbout = etUserName.text.toString()
 
-        if (TextUtils.isEmpty(strUserName)|| TextUtils.isEmpty(strUserAvatar)||TextUtils.isEmpty(strUserPhone)||
-            TextUtils.isEmpty(strUserWebsite)||TextUtils.isEmpty(strUserAdress)||TextUtils.isEmpty(strUserAbout)){
+       /* if (TextUtils.isEmpty(strUserName)|| TextUtils.isEmpty(strUserAvatar)||TextUtils.isEmpty(strUserPhone)||
+            TextUtils.isEmpty(strUserWebsite)||TextUtils.isEmpty(strUserAdress)||TextUtils.isEmpty(strUserAbout)){*/
             binding.addNeighborButton.isEnabled = false
-        } else{
-            binding.addNeighborButton.isEnabled = true
-        }
+
 
         binding.addNeighborButton.setOnClickListener {
             var neighbor = Neighbor(
@@ -57,7 +61,6 @@ class AddNeighbourFragment: Fragment() {
                 aboutMe = binding.about.text.toString(),
                 favorite = false
             )
-
 
 
        /*     if (TextUtils.isEmpty(strUserName)) {

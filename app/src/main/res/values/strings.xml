@@ -15,4 +15,6 @@
     <string name="hint_phone">Telephone</string>
     <string name="hint_name">Nom</string>
     <string name="hint_image">Image</string>
+    <string name="neighborsList">Liste des voisins</string>
+    <string name="addNeighborsTitle">Ajouter un voisin</string>
 </resources>

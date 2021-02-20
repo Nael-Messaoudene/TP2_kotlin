@@ -20,7 +20,7 @@ import com.gmail.nmessaoudene.tp2_nael_messaoudene.databinding.ListNeighborsFrag
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.models.Neighbor
 
 
-class ListNeighborsFragment : ListNeighborHandler, NavigationListener,Fragment(){
+class ListNeighborsFragment : ListNeighborHandler,Fragment(){
 
 
     // lateinit permet d'indiquer au compilateur que la variable sera initialisé plus tard -> Dans le onCreateView
@@ -51,23 +51,24 @@ class ListNeighborsFragment : ListNeighborHandler, NavigationListener,Fragment()
 
 
         binding.addNeighbor.setOnClickListener(View.OnClickListener {
-            //callback.onDeleteNeibor(mNeighbours[position])
-            //notifyDataSetChanged()
-            // displayAlertDialog(neighbour)
-            //showAlertDialog(position)
-            Log.v("switch neighbors","ekip ekip")
 
-            showFragment(AddNeighbourFragment())
-            //showFr
+            Log.v("switch neighbors","ekip ekip")
+            (activity as? NavigationListener)?.let {
+                it.showFragment(AddNeighbourFragment())
+            }
+
         })
 
+        (activity as? NavigationListener)?.let {
+            it.updateTitle(R.string.neighborsList)
+        }
     }
 
     override fun onDeleteNeibor(neighbor: Neighbor) {
         NeighborRepository.getInstance().delete(neighbor)
     }
 
-    override fun showFragment(fragment: Fragment) {
+/*    override fun showFragment(fragment: Fragment) {
         //
 
        // fragmentManager
@@ -78,5 +79,6 @@ class ListNeighborsFragment : ListNeighborHandler, NavigationListener,Fragment()
         }?.commit()
     }
 
+*/
 
 }
