@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TP2_nael_messaoudene</string>
+    <string name="telephone">Phone</string>
+    <string name="image">image</string>
+    <string name="nom">Name</string>
+    <string name="website">Website</string>
+    <string name="adresse">Address</string>
+    <string name="a_propos_de_moi">About me</string>
+    <string name="add_neighbors">Add neighbors</string>
+    <string name="enregistrer">Save</string>
+    <string name="save">Save</string>
+    <string name="hint_about">About me</string>
+    <string name="hint_address">Address</string>
+    <string name="hint_website">Website</string>
+    <string name="hint_phone">Phone</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_image">Image</string>
+    <string name="neighborsList">List of neighbors</string>
+    <string name="addNeighborsTitle">Add new neighbors</string>
+</resources>
