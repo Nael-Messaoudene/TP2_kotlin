@@ -1,4 +1,4 @@
-package com.gmail.nmessaoudene.tp2_nael_messaoudene.data.datasource
+package com.gmail.nmessaoudene.tp2_nael_messaoudene.dal
 
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.models.Neighbor
 

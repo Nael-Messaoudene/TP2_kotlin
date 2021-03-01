@@ -1,14 +1,16 @@
-package com.gmail.nmessaoudene.tp2_nael_messaoudene
+package com.gmail.nmessaoudene.tp2_nael_messaoudene.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.gmail.nmessaoudene.tp2_nael_messaoudene.NavigationListener
+import com.gmail.nmessaoudene.tp2_nael_messaoudene.R
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.databinding.ActivityMainBinding
-import com.gmail.nmessaoudene.tp2_nael_messaoudene.fragments.ListNeighborsFragment
+import com.gmail.nmessaoudene.tp2_nael_messaoudene.ui.fragments.ListNeighborsFragment
 
-class MainActivity : AppCompatActivity(),NavigationListener {
+class MainActivity : AppCompatActivity(),
+    NavigationListener {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var toolbar: Toolbar

@@ -1,14 +1,15 @@
-package com.gmail.nmessaoudene.tp2_nael_messaoudene.data
+package com.gmail.nmessaoudene.tp2_nael_messaoudene.repositories
 
-import com.gmail.nmessaoudene.tp2_nael_messaoudene.data.datasource.InMemoryNeighborDataSource
-import com.gmail.nmessaoudene.tp2_nael_messaoudene.data.datasource.NeighborDatasource
+import com.gmail.nmessaoudene.tp2_nael_messaoudene.dal.memory.InMemoryNeighborDataSource
+import com.gmail.nmessaoudene.tp2_nael_messaoudene.dal.NeighborDatasource
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.models.Neighbor
 
 class NeighborRepository {
     private val dataSource: NeighborDatasource
 
     init {
-        dataSource = InMemoryNeighborDataSource()
+        dataSource =
+            InMemoryNeighborDataSource()
     }
 
     // Méthode qui retourne la liste des voisins
