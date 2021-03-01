@@ -15,14 +15,14 @@ import com.gmail.nmessaoudene.tp2_nael_messaoudene.databinding.NeighborItemBindi
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.models.Neighbor
 
 class ListNeighborsAdapter(
-    items: List<Neighbor>,
+    items: MutableList<Neighbor>,
     val callback: ListNeighborHandler
 ) : RecyclerView.Adapter<ListNeighborsAdapter.ViewHolder>() {
 
     //private val context: Context? = null
     private var context: Context? = null
 
-    private val mNeighbours: List<Neighbor> = items
+    private val mNeighbours: MutableList<Neighbor> = items
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding: NeighborItemBinding = NeighborItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         context = parent.getContext();

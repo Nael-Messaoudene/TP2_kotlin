@@ -4,8 +4,11 @@ import android.app.Application
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.sqlite.db.SupportSQLiteDatabase
+import com.gmail.nmessaoudene.tp2_nael_messaoudene.dal.InMemory_NeighborS
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.dal.room.daos.NeighborDao
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.dal.room.entities.NeighborEntity
+import java.util.concurrent.Executors
 
 @Database(
     entities = [NeighborEntity::class],
@@ -22,11 +25,24 @@ abstract class NeighborDataBase : RoomDatabase() {
                     application.applicationContext,
                     NeighborDataBase::class.java,
                     "neighbor_database.db"
-                )
+                ).addCallback(object : Callback() {
+                    override fun onCreate(db: SupportSQLiteDatabase) {
+                        super.onCreate(db)
+                        insertFakeData()
+                    }
+                })
                     .fallbackToDestructiveMigration()
                     .build()
             }
             return instance!!
+        }
+
+        private fun insertFakeData() {
+            Executors.newSingleThreadExecutor().execute {
+                InMemory_NeighborS.forEach {
+                instance?.neighborDao()?.add(it.toEntity())
+                }
+            }
         }
     }
 }

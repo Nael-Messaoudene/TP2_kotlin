@@ -1,5 +1,6 @@
 package com.gmail.nmessaoudene.tp2_nael_messaoudene.ui.fragments
 
+import android.app.Application
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -65,18 +66,21 @@ class ListNeighborsFragment : ListNeighborHandler,Fragment(){
     }
 
     private fun setData() {
-        val neighbors = NeighborRepository.getInstance().getNeighbours()
+        val application: Application = activity?.application ?: return
+        val neighbors = NeighborRepository.getInstance(application).getNeighbours()
         neighbors.observe(
             viewLifecycleOwner,
             Observer<List<Neighbor>> { t ->
-                val adapter = ListNeighborsAdapter(t, this@ListNeighborsFragment)
+                val adapter = ListNeighborsAdapter(t as MutableList<Neighbor>, this@ListNeighborsFragment)
                 binding.neighborsList.adapter = adapter
             }
         )
     }
 
     override fun onDeleteNeibor(neighbor: Neighbor) {
-        NeighborRepository.getInstance().delete(neighbor)
+        val application: Application = activity?.application ?: return
+
+        NeighborRepository.getInstance(application).delete(neighbor)
     }
 
 /*    override fun showFragment(fragment: Fragment) {
