@@ -1,9 +1,6 @@
-package com.gmail.nmessaoudene.tp2_nael_messaoudene.fragments
+package com.gmail.nmessaoudene.tp2_nael_messaoudene.ui.fragments
 
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextUtils
-import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

@@ -1,8 +1,10 @@
-package com.gmail.nmessaoudene.tp2_nael_messaoudene.data.datasource
+package com.gmail.nmessaoudene.tp2_nael_messaoudene.dal.memory
 
+import com.gmail.nmessaoudene.tp2_nael_messaoudene.dal.NeighborDatasource
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.models.Neighbor
 
-class InMemoryNeighborDataSource : NeighborDatasource{
+class InMemoryNeighborDataSource :
+    NeighborDatasource {
 
     override val neighbors: MutableList<Neighbor>
         get() = InMemory_NeighborS

@@ -1,21 +1,18 @@
-package com.gmail.nmessaoudene.tp2_nael_messaoudene.fragments
+package com.gmail.nmessaoudene.tp2_nael_messaoudene.ui.fragments
 
-import android.app.Activity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
-import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.NavigationListener
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.R
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.adapters.ListNeighborHandler
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.adapters.ListNeighborsAdapter
-import com.gmail.nmessaoudene.tp2_nael_messaoudene.data.NeighborRepository
+import com.gmail.nmessaoudene.tp2_nael_messaoudene.repositories.NeighborRepository
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.databinding.ListNeighborsFragmentBinding
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.models.Neighbor
 
