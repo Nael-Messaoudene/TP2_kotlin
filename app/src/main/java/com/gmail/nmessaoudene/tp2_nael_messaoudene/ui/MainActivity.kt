@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity(),
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
 
-        //DI.inject(application)
+        DI.inject(application)
         setSupportActionBar(binding.toolbar)
         binding.toolbar.bringToFront() // z-index de la toolbar
         setContentView(binding.root)
