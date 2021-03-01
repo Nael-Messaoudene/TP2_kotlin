@@ -45,10 +45,6 @@ class ListNeighborsFragment : ListNeighborHandler,Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-      /*  val neighbors = NeighborRepository.getInstance().getNeighbours()
-        val adapter = ListNeighborsAdapter(neighbors,this)
-        binding.neighborsList.adapter = adapter
-*/
         setData()
 
         binding.addNeighbor.setOnClickListener(View.OnClickListener {
@@ -67,7 +63,7 @@ class ListNeighborsFragment : ListNeighborHandler,Fragment(){
 
     private fun setData() {
         val application: Application = activity?.application ?: return
-        val neighbors = NeighborRepository.getInstance(application).getNeighbours()
+        val neighbors = NeighborRepository.getInstance(application).getNeighbors()
         neighbors.observe(
             viewLifecycleOwner,
             Observer<List<Neighbor>> { t ->

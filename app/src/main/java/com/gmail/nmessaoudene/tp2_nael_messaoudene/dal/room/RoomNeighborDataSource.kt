@@ -1,6 +1,7 @@
 package com.gmail.nmessaoudene.tp2_nael_messaoudene.dal.room
 
 import android.app.Application
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.dal.NeighborDatasource
@@ -22,15 +23,14 @@ class RoomNeighborDataSource(application: Application) : NeighborDatasource {
         }
     }
 
-    override val neighbours: MutableLiveData<List<Neighbor>>
+    override val neighbours: LiveData<List<Neighbor>>
         get() = _neighors
 
     override fun deleteNeighbour(neighbor: Neighbor) {
-        TODO("Not yet implemented")
+        dao.delete(neighbor.toEntity())
     }
 
     override fun createNeighbour(neighbor: Neighbor) {
-      //database.neighborDao().add(neighbor = neighbor)
         dao.add(neighbor.toEntity())
     }
 

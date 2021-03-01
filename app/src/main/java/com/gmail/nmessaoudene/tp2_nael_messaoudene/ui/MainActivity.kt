@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.NavigationListener
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.R
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.databinding.ActivityMainBinding
+import com.gmail.nmessaoudene.tp2_nael_messaoudene.di.DI
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.ui.fragments.ListNeighborsFragment
 
 class MainActivity : AppCompatActivity(),
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity(),
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
 
+        DI.inject(application)
         setSupportActionBar(binding.toolbar)
         binding.toolbar.bringToFront() // z-index de la toolbar
         setContentView(binding.root)

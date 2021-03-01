@@ -10,7 +10,7 @@ interface NeighborDatasource {
      * Get all my Neighbors
      * @return [List]
      */
-    val neighbours: MutableLiveData<List<Neighbor>>
+    val neighbours: LiveData<List<Neighbor>>
 
     /**
      * Deletes a neighbor

@@ -15,9 +15,10 @@ class NeighborRepository private constructor(application: Application) {
     }
 
     // Méthode qui retourne la liste des voisins
-    fun getNeighbours(): LiveData<List<Neighbor>> = dataSource.neighbours
+    fun getNeighbors(): LiveData<List<Neighbor>> = dataSource.neighbours
 
     fun delete(neighbor: Neighbor) = dataSource.deleteNeighbour(neighbor)
+    fun createNeighbor(neighbor: Neighbor) = dataSource.createNeighbour(neighbor)
 
     companion object {
         private var instance: NeighborRepository? = null
