@@ -1,6 +1,7 @@
 package com.gmail.nmessaoudene.tp2_nael_messaoudene.fragments
 
 import android.os.Bundle
+import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
 import android.view.LayoutInflater
@@ -26,6 +27,8 @@ class AddNeighbourFragment: Fragment() {
         (activity as? NavigationListener)?.let {
             it.updateTitle(R.string.addNeighborsTitle)
         }
+
+
 
         val etUserName = binding.name as EditText
         val strUserName = etUserName.text.toString()
@@ -75,7 +78,10 @@ class AddNeighbourFragment: Fragment() {
 
         }
 
+
     }
+
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = AddNeighborBinding.inflate(inflater, container, false)
