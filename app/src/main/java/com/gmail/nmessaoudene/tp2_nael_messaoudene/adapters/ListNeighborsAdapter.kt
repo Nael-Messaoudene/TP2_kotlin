@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -14,14 +15,14 @@ import com.gmail.nmessaoudene.tp2_nael_messaoudene.databinding.NeighborItemBindi
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.models.Neighbor
 
 class ListNeighborsAdapter(
-    items: MutableList<Neighbor>,
+    items: List<Neighbor>,
     val callback: ListNeighborHandler
 ) : RecyclerView.Adapter<ListNeighborsAdapter.ViewHolder>() {
 
     //private val context: Context? = null
     private var context: Context? = null
 
-    private val mNeighbours: MutableList<Neighbor> = items
+    private val mNeighbours: List<Neighbor> = items
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding: NeighborItemBinding = NeighborItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         context = parent.getContext();
@@ -29,7 +30,7 @@ class ListNeighborsAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val neighbour: Neighbor = mNeighbours[position]
+        val neighbour: Neighbor =  mNeighbours[position]
         // Display Neighbour Name
         holder.binding.itemListName.text = neighbour.name
         val context = holder.binding.root.context

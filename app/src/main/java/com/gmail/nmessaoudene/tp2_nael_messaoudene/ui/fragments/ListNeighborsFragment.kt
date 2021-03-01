@@ -6,6 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.NavigationListener
@@ -19,10 +23,8 @@ import com.gmail.nmessaoudene.tp2_nael_messaoudene.models.Neighbor
 
 class ListNeighborsFragment : ListNeighborHandler,Fragment(){
 
-
     // lateinit permet d'indiquer au compilateur que la variable sera initialisé plus tard -> Dans le onCreateView
     private lateinit var binding: ListNeighborsFragmentBinding
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -42,10 +44,11 @@ class ListNeighborsFragment : ListNeighborHandler,Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val neighbors = NeighborRepository.getInstance().getNeighbours()
+      /*  val neighbors = NeighborRepository.getInstance().getNeighbours()
         val adapter = ListNeighborsAdapter(neighbors,this)
         binding.neighborsList.adapter = adapter
-
+*/
+        setData()
 
         binding.addNeighbor.setOnClickListener(View.OnClickListener {
 
@@ -59,6 +62,17 @@ class ListNeighborsFragment : ListNeighborHandler,Fragment(){
         (activity as? NavigationListener)?.let {
             it.updateTitle(R.string.neighborsList)
         }
+    }
+
+    private fun setData() {
+        val neighbors = NeighborRepository.getInstance().getNeighbours()
+        neighbors.observe(
+            viewLifecycleOwner,
+            Observer<List<Neighbor>> { t ->
+                val adapter = ListNeighborsAdapter(t, this@ListNeighborsFragment)
+                binding.neighborsList.adapter = adapter
+            }
+        )
     }
 
     override fun onDeleteNeibor(neighbor: Neighbor) {

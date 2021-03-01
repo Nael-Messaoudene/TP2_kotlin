@@ -1,5 +1,6 @@
 package com.gmail.nmessaoudene.tp2_nael_messaoudene.repositories
 
+import androidx.lifecycle.LiveData
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.dal.memory.InMemoryNeighborDataSource
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.dal.NeighborDatasource
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.models.Neighbor
@@ -13,7 +14,7 @@ class NeighborRepository {
     }
 
     // Méthode qui retourne la liste des voisins
-    fun getNeighbours(): MutableList<Neighbor> = dataSource.neighbors
+    fun getNeighbours(): LiveData<List<Neighbor>> =  dataSource.neighbours
 
     companion object {
         private var instance: NeighborRepository? = null
@@ -28,9 +29,10 @@ class NeighborRepository {
     }
 
     fun delete(neighbor: Neighbor){
-        dataSource.deleteNeighbor(neighbor)
+        //dataSource.deleteNeighbor(neighbor)
+        print(neighbor)
     }
 
-    fun createNeighbor(neighbor: Neighbor) = dataSource.createNeighbor(neighbor)
+    fun createNeighbor(neighbor: Neighbor) = print(neighbor)//dataSource.createNeighbor(neighbor)
 
 }
