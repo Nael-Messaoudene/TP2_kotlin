@@ -9,6 +9,5 @@ interface ListNeighborHandler {
 
     fun onDeleteNeibor(neighbor: Neighbor)
 
-    //fun onCreate
 
 }

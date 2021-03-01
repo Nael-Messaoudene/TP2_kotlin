@@ -6,6 +6,7 @@ import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.dal.NeighborDatasource
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.dal.room.daos.NeighborDao
+import com.gmail.nmessaoudene.tp2_nael_messaoudene.dal.utilis.toEntity
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.dal.utilis.toNeighbor
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.models.Neighbor
 

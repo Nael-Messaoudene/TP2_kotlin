@@ -2,7 +2,7 @@ package com.gmail.nmessaoudene.tp2_nael_messaoudene.dal
 
 import com.gmail.nmessaoudene.tp2_nael_messaoudene.models.Neighbor
 
-public val InMemory_NeighborS: MutableList<Neighbor> = mutableListOf(
+val InMemory_NeighborS: MutableList<Neighbor> = mutableListOf(
     Neighbor(
         1, "Caroline",
         "https://i.picsum.photos/id/1011/5472/3648.jpg?hmac=Koo9845x2akkVzVFX3xxAc9BCkeGYA9VRVfLE4f0Zzk",

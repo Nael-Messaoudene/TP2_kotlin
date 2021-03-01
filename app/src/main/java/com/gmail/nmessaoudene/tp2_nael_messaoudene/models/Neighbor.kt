@@ -9,10 +9,6 @@ data class Neighbor (
     val address: String,
     val phoneNumber: String,
     val aboutMe: String,
-    val favorite: Boolean,
+    val favorite: Boolean? = false,
     val webSite: String
-    ) {
-    fun toEntity(): NeighborEntity {
-        return NeighborEntity( id, name, avatarUrl, address, phoneNumber, aboutMe, favorite, webSite)
-    }
-}
+    )

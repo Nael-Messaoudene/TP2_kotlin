@@ -2,6 +2,7 @@ package com.gmail.nmessaoudene.tp2_nael_messaoudene.dal.room.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.gmail.nmessaoudene.tp2_nael_messaoudene.models.Neighbor
 
 @Entity(tableName = "neighbors")
 class NeighborEntity(

@@ -19,7 +19,6 @@ class ListNeighborsAdapter(
     val callback: ListNeighborHandler
 ) : RecyclerView.Adapter<ListNeighborsAdapter.ViewHolder>() {
 
-    //private val context: Context? = null
     private var context: Context? = null
 
     private val mNeighbours: List<Neighbor> = items

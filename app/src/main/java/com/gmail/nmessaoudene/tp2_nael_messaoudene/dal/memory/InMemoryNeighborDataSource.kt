@@ -37,18 +37,6 @@ class InMemoryNeighborDataSource :
         TODO("Not yet implemented")
     }
 
-/*    override fun deleteNeighbor(neighbor: Neighbor) {
-        InMemory_NeighborS.remove(neighbor)
-    }
-
-    override fun createNeighbor(neighbor: Neighbor) {
-        InMemory_NeighborS.add(neighbor)
-    }
-
-     override fun updateNeighbor(neighbor: Neighbor) {
-    }
-
-    */
 
 
 
